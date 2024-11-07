@@ -1,21 +1,28 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
-  }
+    "declaration": false,                   // Derleme işlemi sırasında tip dosyaları oluşturulmaz
+    "removeComments": true,                 // Derleme sırasında yorumları kaldır
+    "emitDecoratorMetadata": true,          // Decorator metadata'sı çıkartılır
+    "experimentalDecorators": true,         // Decorators özelliğini aktif et
+    "allowSyntheticDefaultImports": true,   // CommonJS modüllerine uyum sağlamak için
+    "target": "ES2021",                     // ES2021, modern JavaScript özellikleri için
+    "sourceMap": true,                      // TypeScript map dosyalarını oluştur
+    "outDir": "./dist",                     // Derlenmiş dosyalar dist klasörüne yerleştirilir
+    "baseUrl": "./",                        // Projeyi kök dizin olarak ayarlar
+    "incremental": true,                    // Artan derleme kullanımı (daha hızlı derleme)
+    "skipLibCheck": true,                   // Kütüphane dosyalarındaki tip kontrolünü atlar
+    "strictNullChecks": true,               // Null kontrolü sağlar
+    "noImplicitAny": true,                  // `any` tipine izin verilmez
+    "strictBindCallApply": true,            // `bind`, `call`, `apply` metodlarının güvenli tipleri
+    "forceConsistentCasingInFileNames": true,  // Dosya isimlerindeki büyük-küçük harf tutarlılığı
+    "noFallthroughCasesInSwitch": true      // Switch-case yapılarını kontrol eder
+  },
+  "include": [
+    "src/**/*"                              // Kaynak dosyalarını src klasöründe arar
+  ],
+  "exclude": [
+    "node_modules",                         // node_modules klasörü dışlanır
+    "dist"                                  // dist klasörü dışlanır
+  ]
 }
